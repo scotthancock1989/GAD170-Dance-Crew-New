@@ -35,6 +35,10 @@ public class CharacterNameGenerator : MonoBehaviour
             //For every name we need to generate, we need to assign a random first name, last name, nickname and descriptor to each.
             //Below is an example of setting the first name of the emptyName variable to the string "Blank".
             emptyName.firstName = "Blanky Blank Blank";
+            emptyName.lastName ="Blankety";
+            emptyName.nickname ="Blanko";
+            emptyName.descriptor ="Blank";
+
             names[i] = emptyName;
         }
 
