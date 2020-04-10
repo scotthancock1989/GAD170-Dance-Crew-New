@@ -20,7 +20,10 @@ public class Character : MonoBehaviour
 
     public int level; // This is optional if you want to expand on this to level up your characters and stuff welcome to.
     public int currentXP; // This is optional as well if you want to expand on this brief to assign xp etc!
-    public int style, luck, rhythm; 
+    public int style, luck, rhythm;
+
+      
+
 
 
     [Header("Related objects")]
@@ -48,6 +51,9 @@ public class Character : MonoBehaviour
         Debug.LogWarning("InitialStats called, needs to distribute points into stats. This should be able to be ported from previous brief work");
         // We probably want to set out default level and some default random stats 
         // for our luck, style and rythmn.
+        style = 3;
+        luck = Random.Range(2, 8);
+        rhythm = 4;
     }
 
     /// <summary>
@@ -70,7 +76,10 @@ public class Character : MonoBehaviour
         // to ensure that there is not always a draw, by default it just returns 0. 
         // If you right click this function and find all references you can see where it is called.
         Debug.LogWarning("ReturnBattlePoints has been called we probably want to create some battle points based on our stats");
-        return 0;
+        
+        int battlePoints = luck + rhythm + style;
+
+        return battlePoints;
     }
 
     /// <summary>

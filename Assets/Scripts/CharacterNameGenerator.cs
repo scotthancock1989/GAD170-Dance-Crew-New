@@ -23,6 +23,7 @@ public class CharacterNameGenerator : MonoBehaviour
     /// </summary>
     /// <param name="namesNeeded"></param>
     /// <returns></returns>
+	/// Scope return name(input)
     public CharacterName[] GenerateNames(int namesNeeded)
     {
         Debug.LogWarning("CharacterNameGenerator called, it needs to fill out the names array with unique randomly constructed character names");
@@ -34,10 +35,10 @@ public class CharacterNameGenerator : MonoBehaviour
         {
             //For every name we need to generate, we need to assign a random first name, last name, nickname and descriptor to each.
             //Below is an example of setting the first name of the emptyName variable to the string "Blank".
-            emptyName.firstName = "Blanky Blank Blank";
-            emptyName.lastName ="Blankety";
-            emptyName.nickname ="Blanko";
-            emptyName.descriptor ="Blank";
+            emptyName.firstName = firstNames[Random.Range(0,firstNames.Count)];
+            emptyName.lastName = lastNames[Random.Range(0,lastNames.Count)];
+            emptyName.nickname = nicknames[Random.Range(0,nicknames.Count)];
+            emptyName.descriptor = descriptors[Random.Range(0,descriptors.Count)];
 
             names[i] = emptyName;
         }

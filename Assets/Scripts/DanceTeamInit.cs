@@ -27,7 +27,20 @@ public class DanceTeamInit : MonoBehaviour
         // We need to generate some character names for our teams to use from our CharacterNameGenerator.
         // We need to spawn in some dancers using teamA.InitialiseTeamFromNames.
 
+        teamA.SetTroupeName("The Left-Wingers");
+        teamB.SetTroupeName("The Righteous Ones");
+
 
         Debug.LogWarning("InitTeams called, needs to create character names via CharacterNameGenerator and get them into the team.InitaliseTeamFromNames");
+
+        CharacterName[] namesToAssignLeft = nameGenerator.GenerateNames(dancersPerSide);
+
+        CharacterName[] namesToAssignRight = nameGenerator.GenerateNames(dancersPerSide);
+
+        /*teamA.InitialiseTeamFromNames
+            dancerPrefab  DanceTeam.Direction.Left
+            CharacterName[] teamACharacterNames;
+
+        teamB.InitialiseTeamFromNames();*/
     }
 }
